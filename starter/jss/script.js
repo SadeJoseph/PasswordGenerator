@@ -90,10 +90,33 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
- promptValue=prompt(
-  "Please enter your desired password length (10-64 characters) ")
- )
+  var characterLength;
+  var specialC;
+  var numbers;
+  var capitals;
+  var lowercase;
 
+characterLength=prompt("Please enter your desired password length. Between 10 and 64 characters");
+
+if (characterLength===null){
+  alert("Click the 'Generate Password' button to start");
+  return 0;
+}
+else if (characterLength <10 || characterLength >64) {
+  alert("Please enter a number of character between 10-64");
+  return 0;
+}
+else if (isNaN(characterLength)) {
+alert("Please enter a numerical value");
+  return 0;
+}
+
+specialC= confirm("Would you like to add special characters? (i.e '@', '$') ");
+numbers =confirm("Would you like to add numbers? ");
+capitals =confirm("Would you like to add capital letters?");
+lowercase=confirm("Would you like to add  lowerse letters?");
+
+return [characterLength, specialC, numbers, capitals, lowercase];
 }
 
 // Function for getting a random element from an array
