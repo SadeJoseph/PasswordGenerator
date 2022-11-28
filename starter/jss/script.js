@@ -122,6 +122,8 @@ return [characterLength, specialC, numbers, capitals, lowercase];
 // Function for getting a random element from an array
 function getRandom(arr) {
 
+  var index =Math.floor(Math.random() * arr.length -1);
+  return arr[index]
 }
 
 // Function to generate password with user input
