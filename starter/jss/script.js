@@ -122,8 +122,8 @@ return [characterLength, specialC, numbers, capitals, lowercase];
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  var index =Math.floor(Math.random() * arr.length -1);
-  return arr[index]
+  var index =Math.floor(Math.random() * (arr.length -1));
+  return arr[index];
 }
 
 // Function to generate password with user input
@@ -137,7 +137,7 @@ var lowercase;
 var numbers;
 var options;
 
-options = getPasswordOptions;
+options = getPasswordOptions();
 
 if (options.length> 0) {
   characterLength=parseInt(options[0]);
@@ -186,7 +186,13 @@ if (options.length> 0) {
 }
 
 }
+else {
+  alert("Choose at least one character to generate password");
+ }
 
+}
+}
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
@@ -200,4 +206,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-  
