@@ -130,6 +130,11 @@ function getRandom(arr) {
 function generatePassword() {
 var password = "";
 var index;
+var characterLength;
+var specialC;
+var capitals;
+var lowercase;
+var numbers;
 var options;
 
 options = getPasswordOptions;
@@ -137,8 +142,25 @@ options = getPasswordOptions;
 if (options.length> 0) {
   characterLength=parseInt(options[0]);
   specialC=options[1];
-  numbers=options[2];
-  
+  capitals=options[2];
+  lowercase=options[3];
+  numbers=options[4];
+
+  while (password.length !=characterLength) {
+    if (specialC || capitals|| lowercase || numbers ){
+      index=(Math.floor(Math.random() *4));
+      switch (index) {
+        case 0:
+        {if (specialC) 
+        password+= getRandom(specialCharacters);
+      }
+      break;
+      }
+      case 1:
+      {}
+  }
+
+
 
 }
 
