@@ -148,20 +148,41 @@ if (options.length> 0) {
 
   while (password.length !=characterLength) {
     if (specialC || capitals|| lowercase || numbers ){
-      index=(Math.floor(Math.random() *4));
+      index=Math.floor(Math.random() *4); 
       switch (index) {
+      
         case 0:
-        {if (specialC) 
-        password+= getRandom(specialCharacters);
-      }
+          {
+        if (specialC) {
+        password+= getRandom(specialCharacters);}
       break;
       }
+      
       case 1:
-      {}
-  }
+        {
+       if (capitals) {
+          password+= getRandom(upperCasedCharacters);
+        }
+        
+        break;
+      
+    }
+     case 2:
+        {
+          if(lowercase) {
+            password+= getRandom(lowerCasedCharacters);
+          }
+          break;
+        
+          }
 
-
-
+      case 3: 
+      {
+        if (numbers) {
+          password+= getRandom(numericCharacters);
+        }
+        break;
+      }
 }
 
 }
@@ -179,3 +200,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+  
